@@ -21,7 +21,7 @@ def GenPair(length, sumTo, start, end):
     # Generates all combinations of size `length` which sum to `sumTo`.
     temp = list(filter(lambda x: sum(x) == sumTo, itertools.product(range(start, end + 1), repeat = length)))
     possiblePairs = []
-    # Creates \mathbb Z \times\mathbb Z grading.
+    # Creates \mathbb Z \times \mathbb Z grading.
     for a in temp:
         for A in temp:
             b = sorted([[1 - x, 1 - y] for x, y in zip(a, A)], reverse = True)
@@ -78,7 +78,7 @@ while i == True:
         if sum(numTestSubsetA) - sum(numTestSubsetB) == 0:
             print("Total:", sum(numTestSubsetA) + sum(numTestSubsetB))
         else:
-            print("ERROR")
+            exit("ERROR")
         del numTestSubsetA, numTestSubsetB
 
 upToDim = len(allPairs)
